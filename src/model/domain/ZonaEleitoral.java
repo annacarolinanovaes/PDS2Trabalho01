@@ -30,7 +30,7 @@ public class ZonaEleitoral implements Serializable {
 	@OneToMany(mappedBy="zonaEleitoral")
 	private List<Secao> secoes;
 	
-	@OneToMany(mappedBy="eleitor")
+	@OneToMany(mappedBy="zonaEleitoral")
 	private List<Eleitor> eleitores;
 	
 	public ZonaEleitoral(){
