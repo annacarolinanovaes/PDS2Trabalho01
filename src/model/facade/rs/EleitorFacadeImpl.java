@@ -27,18 +27,12 @@ public class EleitorFacadeImpl implements EleitorFacade {
 	@Inject
 	private EleitorDao eleitorDao;
 
-	/* (non-Javadoc)
-	 * @see model.facade.rs.ClienteFacade#getClientes()
-	 */
 	@Override
 	@GET
 	public List<Eleitor> getEleitores() {
 		return eleitorDao.getEleitores(new Eleitor());
 	}
-	
-	/* (non-Javadoc)
-	 * @see model.facade.rs.ClienteFacade#getClientes(java.lang.Integer)
-	 */
+
 	@Override
 	@GET
 	@Path("/{codigo}")
@@ -48,9 +42,6 @@ public class EleitorFacadeImpl implements EleitorFacade {
 		return eleitorDao.getEleitores(eleitor);		
 	}
 	
-	/* (non-Javadoc)
-	 * @see model.facade.rs.ClienteFacade#salvar(model.domain.Cliente)
-	 */
 	@Override
 	@POST
 	public Eleitor salvar(Eleitor eleitor) {
@@ -58,18 +49,12 @@ public class EleitorFacadeImpl implements EleitorFacade {
 		return eleitor;
 	}
 	
-	/* (non-Javadoc)
-	 * @see model.facade.rs.ClienteFacade#atualizar(model.domain.Cliente)
-	 */
 	@Override
 	@PUT
 	public void atualizar(Eleitor eleitor){
 		eleitorDao.atualizar(eleitor);
 	}
-	
-	/* (non-Javadoc)
-	 * @see model.facade.rs.ClienteFacade#deletarCliente(java.lang.Integer)
-	 */
+
 	@Override
 	@DELETE
 	@Path("/{codigo}")
