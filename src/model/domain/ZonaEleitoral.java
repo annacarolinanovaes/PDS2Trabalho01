@@ -30,9 +30,6 @@ public class ZonaEleitoral implements Serializable {
 	@OneToMany(mappedBy="zonaEleitoral")
 	private List<Secao> secoes;
 	
-	@OneToMany(mappedBy="zonaEleitoral")
-	private List<Eleitor> eleitores;
-	
 	public ZonaEleitoral(){
 		
 	}
@@ -68,13 +65,13 @@ public class ZonaEleitoral implements Serializable {
 		this.secoes = secoes;
 	}
 	
-	public List<Eleitor> getEleitores() {
+/*	public List<Eleitor> getEleitores() {
 		return eleitores;
 	}
 
 	public void setEleitores(List<Eleitor> eleitores) {
 		this.eleitores = eleitores;
-	}
+	}*/
 	
 	@Override
 	public int hashCode() {

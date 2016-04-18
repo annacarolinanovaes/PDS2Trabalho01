@@ -4,14 +4,15 @@
 	xsi:schemaLocation="
     http://java.sun.com/xml/ns/persistence
     http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
-    <persistence-unit name="SistemaTRE">
+    <persistence-unit name="bdtre">
 	
 	<provider>org.hibernate.ejb.HibernatePersistence</provider>
 	
 	<jta-data-source>java:jboss/datasources/BDTRE</jta-data-source>
 
 		<properties>
-			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+			<property name="hibernate.dialect" 
+			value="org.hibernate.dialect.MySQLDialect" />
 			<property name="hibernate.hbm2ddl.auto" value="none" />
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value ="true"/>

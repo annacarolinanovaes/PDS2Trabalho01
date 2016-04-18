@@ -25,8 +25,8 @@ public class Eleitor implements Serializable {
 	private Integer codEleitor;
 	
 	@ManyToOne
-	@JoinColumn(name="CD_ZONAELEITORAL",referencedColumnName="CD_ZONAELEITORAL")
-	private ZonaEleitoral zonaEleitoral;
+	@JoinColumn(name="CD_SECAO",referencedColumnName="CD_SECAO")
+	private Secao secao;
 	
 	@Column(name="NM_ELEITOR")
 	private String nomeEleitor;
@@ -47,12 +47,12 @@ public class Eleitor implements Serializable {
 		
 	}
 	
-	public Eleitor(Integer codEleitor, String nomeEleitor, String cPF, String nroTituloEleitor,
+	public Eleitor(Integer codEleitor, String nomeEleitor, String CPF, String nroTituloEleitor,
 			String logradouroEleitor, String cepEleitor) {
 		super();
 		this.codEleitor = codEleitor;
 		this.nomeEleitor = nomeEleitor;
-		CPF = cPF;
+		this.CPF = CPF;
 		this.nroTituloEleitor = nroTituloEleitor;
 		this.logradouroEleitor = logradouroEleitor;
 		this.cepEleitor = cepEleitor;
@@ -80,8 +80,8 @@ public class Eleitor implements Serializable {
 		return CPF;
 	}
 	
-	public void setCPF(String cPF) {
-		CPF = cPF;
+	public void setCPF(String CPF) {
+		this.CPF = CPF;
 	}
 	
 	public String getNroTituloEleitor() {
@@ -108,12 +108,12 @@ public class Eleitor implements Serializable {
 		this.cepEleitor = cepEleitor;
 	}
 	
-	public ZonaEleitoral getZonaEleitoral() {
-		return zonaEleitoral;
+	public Secao getSecao() {
+		return secao;
 	}
 
-	public void setZonaEleitoral(ZonaEleitoral zonaEleitoral) {
-		this.zonaEleitoral = zonaEleitoral;
+	public void setSecao(Secao secao) {
+		this.secao = secao;
 	}
 
 	@Override
