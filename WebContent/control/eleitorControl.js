@@ -19,7 +19,7 @@ app.controller('eleitorControl',function($scope,$http){
 	}
 
     $scope.salvar = function() {
-		if ($scope.cliente.codigo == '') {
+		if ($scope.eleitor.codigo == '') {
 			$http.post(url,$scope.eleitor).success(function(eleitor) {
 				$scope.eleitores.push($scope.eleitor);
 				$scope.novo();
@@ -41,7 +41,7 @@ app.controller('eleitorControl',function($scope,$http){
 			alert('Selecione um eleitor');
 		} else {
 			urlExcluir = url+'/'+$scope.eleitor.codigo;
-			$http,delete(urlExcluir).success(function () {
+			$http.splice(urlExcluir).success(function () {
 				$scope.pesquisar();
 				$scope.novo();
 			}).error(function (erro) {
