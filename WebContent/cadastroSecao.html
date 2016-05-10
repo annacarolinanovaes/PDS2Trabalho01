@@ -1,0 +1,96 @@
+<!DOCTYPE html><html ng-app="eleitorModule"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+    
+	<title>Eleitor</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script src="js/angular.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="control/eleitorControl.js"></script>
+	<script src="control/zonaEleitoralControl.js"></script>
+  </head>
+  
+  <body ng-controller="eleitorControl">
+	<div ng-include="'menu.html'"></div>
+ <div class="col-md-12">
+			<div>
+			  <!-- Nav tabs -->
+			  <ul class="nav nav-tabs" role="tablist">
+			    <li role="presentation" class="active">
+			    	<a href="#cadastro" aria-controls="cadastro" role="tab" data-toggle="tab">Cadastro</a>
+			    </li>
+			    <li role="presentation">
+			    	<a href="#dados" aria-controls="dados" role="tab" data-toggle="tab">Dados</a>
+			    </li>
+			  </ul>
+			  <!-- Tab panes -->
+			  <div class="tab-content">
+			    <div role="tabpanel" class="tab-pane active" id="cadastro">
+					<br>
+					<button type="button" class="btn btn-info" ng-click="novo()">Novo</button>
+					<button type="button" class="btn btn-success" ng-click="salvar()">Salvar</button>
+					<button type="button" class="btn btn-danger" ng-click="excluir()">Excluir</button>
+					<button type="button" class="btn btn-warning" ng-click="pesquisar()">Pesquisar</button>
+					<hr/>
+
+
+            <form class="form-horizontal" role="form">
+              <div class="form-group">
+                <div class="col-sm-2">
+                  <label for="exampleInputCodigo" class="control-label">Código:</label>
+                </div>
+                <div class="col-sm-2">
+                  <input type="text" class="form-control" ng-model="secao.codigo" placeholder="Código">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-2">
+                  <label for="exampleInputNome" class="control-label">Nome da escola:</label>
+                </div>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" placeholder="Nome da escola" ng-model="secao.nomeEscola">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-2">
+                  <label for="exampleInputCPF" class="control-label">Número da sala:</label>
+                </div>
+                <div class="col-sm-4">
+                  <input type="text" class="form-control" placeholder="Número da sala" ng-model="secao.nroSala">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-2">
+                  <label for="exampleInputNroTitulo" class="control-label">Bairro:</label>
+                </div>
+                <div class="col-sm-4">
+                  <input type="text" class="form-control" placeholder="Bairro" ng-model="secao.bairro">
+                </div>
+              </div>
+
+            </form>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="dados">
+				<br>
+				<input type="text" class="form-control" ng-model="criterio" 
+				placeholder="O que você está procurando?" /><br>
+			    	<table class="table table-hover">
+			    		<th>Codigo</th><th>Nome</th><th>CPF</th><th>Nro. título</th><th>Logradouro</th><th>CEP</th>
+
+			    		<tr ng-repeat="eleitorTabela in eleitores | filter:criterio" ng-click="seleciona(secaoTabela);">
+			    			<td>{{secaoTabela.codigo}}</td><td>{{secaoTabela.nome}}</td><td>{{secaoTabela.cpf}}</td><td>{{secaoTabela.nrotitulo}}</td>
+			    			<td>{{secaoTabela.logradouro}}</td><td>{{secaoTabela.cep}}</td>
+			    		</tr>
+					</table>
+			    </div>
+        </div>
+      </div>
+</div>
+  
+
+</body></html>
