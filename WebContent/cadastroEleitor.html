@@ -45,7 +45,7 @@
                   <label for="exampleInputCodigo" class="control-label">Código:</label>
                 </div>
                 <div class="col-sm-2">
-                  <input type="text" class="form-control" ng-model="eleitor.codigo" placeholder="Código">
+                  <input type="text" class="form-control" ng-model="eleitor.codEleitor" placeholder="Código">
                 </div>
               </div>
               <div class="form-group">
@@ -53,7 +53,7 @@
                   <label for="exampleInputNome" class="control-label">Nome:</label>
                 </div>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control" placeholder="Nome" ng-model="eleitor.nome">
+                  <input type="text" class="form-control" placeholder="Nome" ng-model="eleitor.nomeEleitor">
                 </div>
               </div>
               <div class="form-group">
@@ -69,7 +69,7 @@
                   <label for="exampleInputNroTitulo" class="control-label">Número do título:</label>
                 </div>
                 <div class="col-sm-4">
-                  <input type="text" class="form-control" placeholder="XXXX.XXXX.XXXX" ng-model="eleitor.nrotitulo">
+                  <input type="text" class="form-control" placeholder="XXXX.XXXX.XXXX" ng-model="eleitor.nroTituloEleitor">
                 </div>
               </div>
               <div class="form-group">
@@ -77,7 +77,7 @@
                   <label for="inputEmail3" class="control-label" contenteditable="true">Logradouro:</label>
                 </div>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" placeholder="Logradouro" ng-model="eleitor.logradouro">
+                  <input type="text" class="form-control" placeholder="Logradouro" ng-model="eleitor.logradouroEleitor">
                 </div>
               </div>
               <div class="form-group">
@@ -85,7 +85,7 @@
                   <label for="inputPassword3" class="control-label">CEP</label>
                 </div>
                 <div class="col-sm-4">
-                  <input type="text" class="form-control" placeholder="XXXXX-XXX" ng-model="eleitor.cep">
+                  <input type="text" class="form-control" placeholder="XXXXX-XXX" ng-model="eleitor.cepEleitor">
                 </div>
               </div>
             </form>
@@ -98,8 +98,8 @@
 			    		<th>Codigo</th><th>Nome</th><th>CPF</th><th>Nro. título</th><th>Logradouro</th><th>CEP</th>
 
 			    		<tr ng-repeat="eleitorTabela in eleitores | filter:criterio" ng-click="seleciona(eleitorTabela);">
-			    			<td>{{eleitorTabela.codigo}}</td><td>{{eleitorTabela.nome}}</td><td>{{eleitorTabela.cpf}}</td><td>{{eleitorTabela.nrotitulo}}</td>
-			    			<td>{{eleitorTabela.logradouro}}</td><td>{{eleitorTabela.cep}}</td>
+			    			<td>{{eleitorTabela.codEleitor}}</td><td>{{eleitorTabela.nomeEleitor}}</td><td>{{eleitorTabela.cpf}}</td><td>{{eleitorTabela.nroTituloEleitor}}</td>
+			    			<td>{{eleitorTabela.logradouroEleitor}}</td><td>{{eleitorTabela.cepEleitor}}</td>
 			    		</tr>
 					</table>
 			    </div>

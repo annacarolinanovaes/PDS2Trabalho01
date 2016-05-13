@@ -41,7 +41,7 @@ app.controller('eleitorControl',function($scope,$http){
 			alert('Selecione um eleitor');
 		} else {
 			urlExcluir = url+'/'+$scope.eleitor.codigo;
-			$http.splice(urlExcluir).success(function () {
+			$http.delete(urlExcluir).success(function () {
 				$scope.pesquisar();
 				$scope.novo();
 			}).error(function (erro) {
