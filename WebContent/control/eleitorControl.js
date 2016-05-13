@@ -37,10 +37,10 @@ app.controller('eleitorControl',function($scope,$http){
 	}
 	
 	$scope.excluir = function() {
-		if ($scope.eleitor.codigo == '') {
+		if ($scope.eleitor.codEleitor == '') {
 			alert('Selecione um eleitor');
 		} else {
-			urlExcluir = url+'/'+$scope.eleitor.codigo;
+			urlExcluir = url+'/'+$scope.eleitor.codEleitor;
 			$http.delete(urlExcluir).success(function () {
 				$scope.pesquisar();
 				$scope.novo();
